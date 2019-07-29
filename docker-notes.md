@@ -14,7 +14,7 @@ docker run -it --rm
 ```
 example:
 ```
-docker run -it  --rm --name web-test -p 80:8000 -e TEST=ahoj crccheck/hello-world /bin/sh
+docker run -it  --rm --name web-test -p 80:8000 -e TEST=ahoj simple-web:latest /bin/sh
 ```
 
 ### Run busybox image interactively with bash
