@@ -38,7 +38,8 @@ Simple static Web-page server Dockerfile
 ```Dockerfile
 FROM busybox:latest
 
-CMD echo "Hello world" > index.html
+RUN mkdir /www
+RUN echo "Hello world" > /www/index.html
 
 EXPOSE 8000
 HEALTHCHECK CMD nc -z localhost 8000
