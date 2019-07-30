@@ -1,3 +1,3 @@
 # all-the-mess
 
-Repository containes my notes, and other messy things
+Repository contains my notes, and other messy things
