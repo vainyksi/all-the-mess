@@ -22,6 +22,11 @@ sudo kubeadm join 192.168.56.100:6443 --token 53h5vp.s0euiq9aaaaaaaaa \
 
 ## Worker nodes
 
+```
+scp -i ~/.ssh/id_rsa_k8s prepare-kubernetes.sh majky@kubernetes-master:~/
+ssh -i ~/.ssh/id_rsa_k8s majky@kubernetes-node-$NODE_ID -t sudo sh prepare-kubernetes.sh
+```
+
 to get kubeadm join command run this command on kubernetes master node
 ```
 sudo kubeadm token create --print-join-command
