@@ -8,7 +8,7 @@ scp -i ~/.ssh/id_rsa_k8s prepare-kubernetes.sh majky@kubernetes-master:~/
 ssh -i ~/.ssh/id_rsa_k8s majky@kubernetes-master -t sudo sh prepare-kubernetes.sh
 ```
 ```
-scp -i ~/.ssh/id_rsa_k8s prepare-kubernetes-master-node.sh majky@kubernetes-master:~/prepare--kubernetes-master-node.sh
+scp -i ~/.ssh/id_rsa_k8s prepare-kubernetes-master-node.sh majky@kubernetes-master:~/prepare-kubernetes-master-node.sh
 ssh -i ~/.ssh/id_rsa_k8s majky@kubernetes-master -t sudo sh prepare-kubernetes-master-node.sh
 ```
 
