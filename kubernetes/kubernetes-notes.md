@@ -14,3 +14,11 @@ kubectl run hello-kubernetes --replicas=2 --image=simple-web:v1.0 --port=8000 --
 ```
 kubectl expose deployment hello-kubernetes --type=NodePort --port=80 --target-port=8000 --name=hello-kubernetes
 ```
+
+
+#### setup autocomplete for kubectl
+
+```
+source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
+echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
+```
