@@ -26,3 +26,9 @@
     ```
     sudo dhclient -v eth0
     ```
+
+- change netplan static IP (ubuntu 18.04 server)
+  ```
+  sudo sed -i 's/$NEW_IP/$OLD_IP' /etc/netplan/50-cloud-init.yaml
+  sudo netplan apply
+  ```
