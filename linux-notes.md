@@ -32,3 +32,9 @@
   sudo sed -i 's/$NEW_IP/$OLD_IP' /etc/netplan/50-cloud-init.yaml
   sudo netplan apply
   ```
+  
+- Ubuntu 18.04 LTS preserve hostname (source [here](https://askubuntu.com/questions/1028633/host-name-reverts-to-old-name-after-reboot-in-18-04-lts))
+  
+  First edit /etc/cloud/cloud.cfg and set the parameter "preserve_hostname" from "false" to "true" and then edit /etc/hostname or call ```sudo hostnamectl set-hostname $NEW_HOSTNAME```.
+  
+  
