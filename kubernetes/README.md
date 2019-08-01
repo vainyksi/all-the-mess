@@ -2,6 +2,8 @@
 
 Preapre VMs (TODO)
 
+TODO for VMs with two network interfaces NAT & host-only, comment gateway for host-only interface in /etc/netplan/50-cloud-init.yaml
+
 ## Master node
 ```
 scp -i ~/.ssh/id_rsa_k8s prepare-kubernetes.sh majky@kubernetes-master:~/
