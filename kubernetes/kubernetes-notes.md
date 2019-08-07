@@ -22,3 +22,16 @@ kubectl expose deployment hello-kubernetes --type=NodePort --port=80 --target-po
 source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
 echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
 ```
+
+#### setup remote acces to kubectl
+
+```
+scp -r -i $KEY_PATH $USERNAME@$KUBERNETES_MASTER_NODE_IP:~/.kube .
+cp -r .kube/ ~/
+kubectl version --short
+```
+result should be something like
+```
+Client Version: v1.15.2
+Server Version: v1.15.1
+```
