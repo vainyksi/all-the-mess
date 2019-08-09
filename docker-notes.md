@@ -38,6 +38,23 @@ Simple static Web-page server Dockerfile
 ```Dockerfile
 FROM busybox:latest
 
+
+### install docker on kubernetes nodes
+```
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+sudo systemctl enable docker
+sudo usermod -aG docker ${USER}
+su - ${USER}
+
+```
+
 RUN mkdir /www
 RUN echo "Hello world" > /www/index.html
 
