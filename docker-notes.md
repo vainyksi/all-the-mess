@@ -38,6 +38,18 @@ Simple static Web-page server Dockerfile
 ```Dockerfile
 FROM busybox:latest
 
+RUN mkdir /www
+RUN echo "Hello world" > /www/index.html
+
+EXPOSE 8000
+HEALTHCHECK CMD nc -z localhost 8000
+
+# Create a basic webserver and run it until the container is stopped
+CMD trap "exit 0;" TERM INT; httpd -p 8000 -h /www -f & wait
+```
+save as ```Dockerfile``` and build
+
+
 
 ### install docker on kubernetes nodes
 ```
@@ -54,14 +66,3 @@ sudo usermod -aG docker ${USER}
 su - ${USER}
 
 ```
-
-RUN mkdir /www
-RUN echo "Hello world" > /www/index.html
-
-EXPOSE 8000
-HEALTHCHECK CMD nc -z localhost 8000
-
-# Create a basic webserver and run it until the container is stopped
-CMD trap "exit 0;" TERM INT; httpd -p 8000 -h /www -f & wait
-```
-save as ```Dockerfile``` and build
