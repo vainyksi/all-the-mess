@@ -70,7 +70,7 @@ su - ${USER}
 ### run container until is stopped
 
 end the dokcer file with:
-```
+```Dockerfile
 CMD exec /bin/sh -c "trap : TERM INT; sleep infinity & wait"
 
 ENTRYPOINT []
