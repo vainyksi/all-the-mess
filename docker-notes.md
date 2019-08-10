@@ -75,3 +75,11 @@ CMD exec /bin/sh -c "trap : TERM INT; sleep infinity & wait"
 
 ENTRYPOINT []
 ```
+
+### install basic linux networking tools
+
+for light base containers, i.e. ```openjdk:11-slim```
+
+```Dockerfile
+RUN apt-get update && apt-get install -y procps dnsutils iputils-ping less
+```
