@@ -35,3 +35,8 @@ result should be something like
 Client Version: v1.15.2
 Server Version: v1.15.1
 ```
+
+### exec command on POD
+```
+kubectl exec -it pod/xxxxxxxxxxxxxxxx -- /bin/bash
+```
